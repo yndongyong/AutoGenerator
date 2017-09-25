@@ -2,6 +2,11 @@
 Android apt library 生成findViewById ,绑定onClick，从getIntent中绑定传递的参数等的代码。
 
 实例代码
+    
+
+    @BindView(R.id.tv_button1)
+    TextView tv_1;
+
     @BindView(R.id.tv_button2)
     TextView tv_2;
 
@@ -10,7 +15,7 @@ Android apt library 生成findViewById ,绑定onClick，从getIntent中绑定传
 
     @Arg("KEY_EXTRA_B")
     String extra_nick_name;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

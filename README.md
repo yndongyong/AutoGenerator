@@ -28,9 +28,12 @@ Android apt library 生成findViewById ,绑定onClick，从getIntent中绑定传
 
     @OnClick({R.id.tv_button1, R.id.tv_button2})
     public void onBtnClick(View view) {
-        if (view.getId() == R.id.tv_button1) {
-            Toast.makeText(this, "tv_1.getText():" + tv_1.getText(), Toast.LENGTH_SHORT).show();
-        } else {
-            doInUiThread();
+        switch (view.getId()) {
+            case R.id.tv_button1:
+                Toast.makeText(this, "tv_1.getText():" + tv_1.getText(), Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.tv_button2:
+                doInUiThread();
+                break;
         }
     }

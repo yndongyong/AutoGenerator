@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Arg("KEY_EXTRA_B")
     String extra_nick_name;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,18 +38,24 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MainActivity", "tv_2 :" + tv_2.getText());
 
     }
+
+    @OnClick({R.id.tv_button1, R.id.tv_button2})
+    public void onBtnClick(View view) {
+        switch (view.getId()) {
+            case R.id.tv_button1:
+                Toast.makeText(this, "tv_1.getText():" + tv_1.getText(), Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.tv_button2:
+                doInUiThread();
+                break;
+        }
+    }
+
     public void doInUiThread() {
         Toast.makeText(this, "doInUiThread" , Toast.LENGTH_SHORT).show();
     }
 
-    @OnClick({R.id.tv_button1, R.id.tv_button2})
-    public void onBtnClick(View view) {
-        if (view.getId() == R.id.tv_button1) {
-            Toast.makeText(this, "tv_1.getText():" + tv_1.getText(), Toast.LENGTH_SHORT).show();
-        } else {
-            doInUiThread();
-        }
-    }
+
     public void doInBackground() {
 
     }

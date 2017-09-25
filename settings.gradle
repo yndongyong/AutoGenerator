@@ -1,0 +1,1 @@
+include ':sample', ':autogenerator-annotations', ':autogenerator-compiler', ':autogenerator-api'
